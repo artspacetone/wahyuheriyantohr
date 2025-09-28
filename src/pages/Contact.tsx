@@ -1,54 +1,59 @@
 import React from 'react';
+import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import './Contact.css';
-
-// Menggunakan Font Awesome via CDN
-const FaWhatsapp = ({ className = '' }: { className?: string }) => (
-  <i className={`fab fa-whatsapp ${className}`}></i>
-);
 
 const Contact: React.FC = () => {
   return (
     <main className="contact-page" role="main">
-      <h1>Hubungi Saya</h1>
-      <p>Punya pertanyaan atau tertarik untuk bekerja sama? Saya akan senang mendengar dari Anda.</p>
-      
-      <section aria-labelledby="whatsapp-section" className="whatsapp-container">
-        <h2 id="whatsapp-section" className="visually-hidden">WhatsApp</h2>
-        <a 
-          href="https://wa.me/6289672003771" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="whatsapp-button"
-          aria-label="Kirim pesan WhatsApp ke MOCH WAHYU HERIYANTO"
+      <div className="contact-header">
+        <h1>Hubungi Saya</h1>
+        <p className="intro-text">
+          Punya pertanyaan, peluang kerja, atau ingin berkolaborasi? Saya akan senang mendengar dari Anda. Pilih metode kontak yang paling nyaman di bawah ini.
+        </p>
+      </div>
+
+      <div className="contact-options-grid">
+        {/* --- Kartu Utama: WhatsApp --- */}
+        <a
+          href="https://wa.me/6289672003771"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-card whatsapp-card"
+          aria-label="Kirim pesan WhatsApp ke Wahyu Panca Anugrah"
         >
-          <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
-          <span>Chat via WhatsApp</span>
-          <p className="whatsapp-note">Klik untuk langsung terhubung ke WhatsApp saya</p>
+          <FaWhatsapp className="contact-icon" />
+          <div className="contact-details">
+            <h3>Metode Tercepat</h3>
+            <p>Chat via WhatsApp</p>
+          </div>
         </a>
-      </section>
-      
-      <section aria-labelledby="kontak-lain" className="contact-info">
-        <h2 id="kontak-lain">Atau hubungi saya melalui:</h2>
-        <p>
-          <strong>Email:</strong> 
-          <a 
-            href="mailto:pandanca7@gmail.com" 
-            className="email-link"
-            aria-label="Kirim email ke pandanca7@gmail.com"
-          >
-            pandanca7@gmail.com
-          </a>
-        </p>
-        <p>
-          <strong>Telepon:</strong> 
-          <a 
-            href="tel:+6289672003771" 
-            aria-label="Telepon ke nomor +62 896-7200-3771"
-          >
-            +62 896-7200-3771
-          </a>
-        </p>
-      </section>
+
+        {/* --- Kartu Kedua: Email --- */}
+        <a
+          href="mailto:pandanca7@gmail.com"
+          className="contact-card"
+          aria-label="Kirim email ke pandanca7@gmail.com"
+        >
+          <FaEnvelope className="contact-icon" />
+          <div className="contact-details">
+            <h3>Email</h3>
+            <p>pandanca7@gmail.com</p>
+          </div>
+        </a>
+
+        {/* --- Kartu Ketiga: Telepon --- */}
+        <a
+          href="tel:+6289672003771"
+          className="contact-card"
+          aria-label="Telepon ke nomor +62 896-7200-3771"
+        >
+          <FaPhoneAlt className="contact-icon" />
+          <div className="contact-details">
+            <h3>Telepon</h3>
+            <p>+62 896-7200-3771</p>
+          </div>
+        </a>
+      </div>
     </main>
   );
 };

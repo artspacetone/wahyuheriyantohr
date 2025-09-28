@@ -1,22 +1,31 @@
+/* =============================================== */
+/* Base Styles & Mobile First (Untuk Semua Ukuran) */
+/* =============================================== */
+
 .experience-page {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem; /* Padding lebih sedikit di mobile */
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* --- Judul Halaman Utama --- */
 .experience-page h1 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
   color: var(--dark-text);
 }
 
-/* Summary stats so the page has immediate visible content */
+/* =============================================== */
+/* Bagian Statistik Kunci (XP Stats)             */
+/* =============================================== */
+
 .xp-stats {
   display: grid;
+  /* Otomatis 2 kolom di mobile, 4 di desktop */
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
-  margin: 0 0 2.5rem 0;
+  margin-bottom: 4rem; /* Jarak lebih besar ke bagian selanjutnya */
 }
 
 .xp-stats .stat {
@@ -24,22 +33,28 @@
   border: 1px solid var(--border-color);
   border-left: 4px solid var(--primary-green);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .xp-stats .value {
   display: block;
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 1.8rem; /* Angka lebih besar dan menonjol */
+  font-weight: 700;
   color: var(--primary-green);
+  margin-bottom: 0.25rem;
 }
 
 .xp-stats .label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--light-text);
 }
+
+/* =============================================== */
+/* Bagian Timeline Pengalaman Kerja              */
+/* =============================================== */
 
 .timeline {
   position: relative;
@@ -48,105 +63,123 @@
   list-style: none;
 }
 
+/* Garis vertikal timeline */
 .timeline::before {
   content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 30px;
-  width: 4px;
+  top: 10px;
+  bottom: 10px;
+  left: 15px; /* Lebih dekat ke tepi di mobile */
+  width: 3px;
   background: var(--light-green);
+  border-radius: 2px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
-  padding-left: 60px;
+  margin-bottom: 2.5rem;
+  padding-left: 45px; /* Ruang untuk garis dan titik */
 }
 
+/* Titik pada timeline */
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: 22px;
+  left: 7px; /* Di tengah garis */
   top: 5px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--primary-green);
-  border: 3px solid var(--light-green);
+  border: 4px solid var(--background-white);
+  z-index: 1;
 }
 
 .timeline-content {
   background: var(--background-white);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .timeline-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--dark-text);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0;
 }
 
 .timeline-content h4 {
   font-size: 1rem;
   color: var(--light-text);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-weight: 500;
 }
 
 .timeline-content .period {
-  font-size: 0.9rem;
+  display: inline-block;
+  font-size: 0.85rem;
   color: var(--primary-green);
   font-weight: 600;
   margin-bottom: 1rem;
+  background-color: var(--light-green);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
 }
 
 .timeline-content ul {
   padding-left: 20px;
+  margin: 0;
 }
 
 .timeline-content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: var(--light-text);
 }
 
 .achievement {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   background-color: var(--light-green);
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border-left: 4px solid var(--primary-green);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-/* Skills Section */
-.skills-section {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-}
+/* =============================================== */
+/* Bagian Keterampilan (Skills) & Pendidikan      */
+/* =============================================== */
 
-.skills-section h2 {
+/* Judul untuk setiap bagian (Keterampilan, Pendidikan) */
+.section-title {
   font-size: 2rem;
   color: var(--dark-text);
+  margin-top: 4rem; /* Jarak besar antar bagian */
   margin-bottom: 2rem;
   text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 3rem;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr; /* 1 kolom di mobile */
+  gap: 1.5rem;
 }
 
 .skill-category {
   background-color: var(--background-white);
   padding: 2rem;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  border-left: 4px solid var(--primary-green);
+  border-radius: 12px;
 }
 
 .skill-category h3 {
@@ -157,17 +190,11 @@
   padding-bottom: 1rem;
 }
 
-.skill-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .skill-category li {
   font-size: 1rem;
   color: var(--light-text);
   margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
   position: relative;
 }
 
@@ -176,48 +203,67 @@
   color: var(--primary-green);
   position: absolute;
   left: 0;
-}
-
-/* Education Section */
-.education-section {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.education-section h2 {
-  font-size: 2rem;
-  color: var(--dark-text);
-  margin-bottom: 2rem;
-  text-align: center;
+  font-size: 1.1rem;
+  top: 1px;
 }
 
 .education-card {
   background-color: var(--background-white);
-  padding: 2.5rem;
+  padding: 2rem;
   border: 1px solid var(--border-color);
   border-left: 5px solid var(--primary-green);
   border-radius: 8px;
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .education-card h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--dark-text);
   margin: 0 0 0.5rem 0;
 }
 
 .education-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--light-text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .education-card .graduation-details {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--dark-text);
-  font-weight: 600;
+}
+
+/* =============================================== */
+/* Tablet & Desktop Overrides (Layar Lebih Besar)  */
+/* =============================================== */
+
+@media (min-width: 768px) {
+  .experience-page {
+    padding: 4rem 2rem;
+  }
+
+  .experience-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline::before {
+    left: 30px; /* Jauhkan garis dari tepi */
+  }
+
+  .timeline-item {
+    padding-left: 70px; /* Beri lebih banyak ruang */
+  }
+
+  .timeline-item::before {
+    left: 22px; /* Posisikan kembali titiknya */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom di desktop */
+  }
 }
