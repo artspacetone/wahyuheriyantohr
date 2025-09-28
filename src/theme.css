@@ -1,0 +1,8 @@
+:root {
+  --primary-green: #4CAF50; /* A vibrant, professional green */
+  --light-green: #E8F5E9;   /* A very light green for backgrounds */
+  --dark-text: #333333;      /* For main text */
+  --light-text: #555555;     /* For subtitles and descriptions */
+  --background-white: #FFFFFF;
+  --border-color: #DDDDDD;
+}

@@ -1,0 +1,27 @@
+.portfolio-page {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9; /* A slightly off-white background */
+}
+
+.portfolio-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+
+.portfolio-intro {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.2rem;
+  color: var(--light-text);
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.8;
+  hyphens: auto;
+}
+
+.portfolio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}

@@ -1,0 +1,115 @@
+.spotlight-card {
+  display: flex;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 4rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Image positioned to the right (default) */
+.spotlight-card.image-right {
+  flex-direction: row;
+}
+
+/* Image positioned to the left */
+.spotlight-card.image-left {
+  flex-direction: row-reverse;
+}
+
+.spotlight-image-container {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--light-green);
+  padding: 1rem; /* Menambahkan padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.spotlight-card:hover .spotlight-image {
+  transform: scale(1.05);
+}
+
+.spotlight-content {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem; /* Menambahkan padding */
+  overflow: auto; /* Mencegah konten keluar dari container */
+  max-height: 100%; /* Membatasi tinggi maksimum */
+}
+
+.spotlight-content h2 {
+  font-size: 2rem;
+  color: var(--primary-green);
+}
+
+.spotlight-section {
+  margin-bottom: 2rem;
+}
+
+.spotlight-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.spotlight-section p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin: 0.5rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.spotlight-section.result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.spotlight-section.result li {
+  font-size: 1.1rem;
+  color: var(--dark-text);
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.spotlight-section.result li::before {
+  content: '✓';
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .spotlight-card {
+    flex-direction: column !important;
+  }
+
+  .spotlight-image-container {
+    min-height: 250px;
+    min-width: auto;
+  }
+
+  .spotlight-content {
+    padding: 2rem 1.5rem;
+  }
+}
