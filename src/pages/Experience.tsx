@@ -10,153 +10,132 @@ type ExperienceItem = {
   achievement?: string;
 };
 
-// Data tidak berubah, implementasi di JSX yang akan kita perbaiki
 const experiences: ExperienceItem[] = [
   {
     role: 'HR Supervisor / Analyst',
     company: 'TRANS TV',
     location: 'Jakarta, Indonesia',
-    period: 'Juli 2018 – Sekarang',
+    period: 'July 2018 – Present',
     points: [
-      'Menyelesaikan rata-rata 5-7 perselisihan industrial per bulan, berhasil <strong>mengurangi keluhan formal (grievance) lebih dari 15%</strong> secara tahunan.',
-      'Memberikan edukasi kebijakan perusahaan kepada lebih dari 500 karyawan, yang berdampak pada <strong>penurunan pertanyaan terkait kepatuhan sebesar 20%</strong>.',
-      'Menganalisis metrik SDM untuk mengidentifikasi faktor pendorong turnover, menghasilkan implementasi program keterlibatan yang <strong>menurunkan turnover sukarela sebesar 10%</strong>.',
+      'Resolved an average of 5-7 industrial disputes per month through mediation, successfully <strong>reducing formal grievances by over 15%</strong> annually.',
+      'Educated over 500 employees on company policies, leading to a <strong>20% decrease in compliance-related inquiries</strong>.',
+      'Analyzed HR metrics to identify key turnover drivers, resulting in the implementation of engagement programs that <strong>lowered voluntary turnover by 10%</strong>.',
     ],
-    achievement: 'Mengembangkan skrip Python untuk mengotomatisasi laporan SDM bulanan, <strong>meningkatkan efisiensi proses sebesar 90%</strong> (dari 2 hari menjadi 3 jam).'
+    achievement: 'Developed a Python script to automate monthly HR reporting, <strong>increasing process efficiency by 90%</strong> (from 2 days to 3 hours).'
   },
   {
     role: 'HR Supervisor',
     company: 'TRANS TV',
     location: 'Jakarta, Indonesia',
-    period: 'April 2014 – Juni 2018',
+    period: 'April 2014 – June 2018',
     points: [
-      'Mengelola proses penggajian dan administrasi untuk 300+ karyawan dengan <strong>tingkat akurasi 99.8%</strong>.',
-      'Menegosiasikan ulang paket tunjangan dengan vendor, menghasilkan <strong>penghematan biaya tahunan sebesar 10%</strong> bagi perusahaan.',
-      'Merancang program onboarding baru, yang <strong>meningkatkan skor kepuasan karyawan baru sebesar 25%</strong> dalam 90 hari pertama.',
+      'Managed payroll and benefits administration for 300+ employees with a <strong>99.8% accuracy rate</strong>.',
+      'Renegotiated employee benefit packages with external vendors, achieving <strong>annual cost savings of 10%</strong> for the company.',
+      'Designed and implemented a new onboarding program, which <strong>improved new hire satisfaction scores by 25%</strong> within the first 90 days.',
     ]
   },
   {
-    role: 'Staf HR',
+    role: 'HR Staff',
     company: 'PT. Rifa Putra Utama',
     location: 'Jakarta, Indonesia',
-    period: 'Februari 2012 – Januari 2014',
+    period: 'February 2012 – January 2014',
     points: [
-      'Memproses administrasi SDM dasar, termasuk data karyawan, absensi, dan cuti.',
+      'Processed foundational HR administration, including employee data, attendance, and leave requests.',
     ],
-    achievement: 'Mengimplementasikan sistem pengarsipan digital, <strong>mengurangi waktu pencarian dokumen sebesar 30%</strong> dan memastikan 100% kepatuhan pelaporan.'
+    achievement: 'Initiated and implemented a digital filing system for employee records, <strong>reducing document retrieval time by 30%</strong> and ensuring 100% reporting compliance.'
   }
 ];
 
 const Experience: React.FC = () => {
-  const hasData = experiences.length > 0;
-
   return (
     <div className="experience-page">
-      {/* PERBAIKAN: Judul diubah menjadi lebih relevan */}
-      <h1>Pengalaman Profesional & Keahlian</h1>
-
+      <h1>Professional Experience & Skills</h1>
       <section className="xp-stats">
         <div className="stat">
-          <span className="value">10+ thn</span>
-          <span className="label">Total Pengalaman</span>
+          <span className="value">10+ Yrs</span>
+          <span className="label">Total Experience</span>
         </div>
         <div className="stat">
           <span className="value">15%↓</span>
-          <span className="label">Keluhan Formal</span>
+          <span className="label">Grievance Reduction</span>
         </div>
         <div className="stat">
           <span className="value">90%↑</span>
-          <span className="label">Efisiensi Laporan</span>
+          <span className="label">Reporting Efficiency</span>
         </div>
         <div className="stat">
           <span className="value">500+</span>
-          <span className="label">Karyawan Dilayani</span>
+          <span className="label">Employees Supported</span>
         </div>
       </section>
-
-      {hasData && (
-        <div className="timeline">
-          {experiences.map((exp, index) => (
-            <div className="timeline-item" key={`${exp.company}-${index}` }>
-              <div className="timeline-content">
-                <h3>{exp.role}</h3>
-                <h4>{exp.company} | {exp.location}</h4>
-                <p className="period">{exp.period}</p>
-                {exp.points && (
-                  <ul>
-                    {/*
-                      PERBAIKAN KRITIS:
-                      Menggunakan dangerouslySetInnerHTML untuk merender tag <strong>.
-                      Ini mengubah <li key={i}>{point}</li> menjadi seperti di bawah.
-                    */}
-                    {exp.points.map((point, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: point }} />
-                    ))}
-                  </ul>
-                )}
-                {exp.achievement && (
-                  <p className="achievement">
-                    <strong>Pencapaian Kunci:</strong>
-                    {/* PERBAIKAN KRITIS: Lakukan hal yang sama untuk achievement */}
-                    <span dangerouslySetInnerHTML={{ __html: exp.achievement.replace('Pencapaian Kunci: ', '') }} />
-                  </p>
-                )}
-              </div>
+      <div className="timeline">
+        {experiences.map((exp, index) => (
+          <div className="timeline-item" key={index}>
+            <div className="timeline-content">
+              <h3>{exp.role}</h3>
+              <h4>{exp.company} | {exp.location}</h4>
+              <p className="period">{exp.period}</p>
+              {exp.points && (
+                <ul>
+                  {exp.points.map((point, i) => (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: point }} />
+                  ))}
+                </ul>
+              )}
+              {exp.achievement && (
+                <p className="achievement">
+                  <strong>Key Achievement:</strong>
+                  <span dangerouslySetInnerHTML={{ __html: exp.achievement.replace('Key Achievement: ', '') }} />
+                </p>
+              )}
             </div>
-          ))}
-        </div>
-      )}
-
-      {/*
-        PERBAIKAN: Judul "Keterampilan" dan "Pendidikan" sekarang menggunakan
-        kelas CSS `.section-title`  untuk pemisahan visual yang lebih baik.
-      */}
+          </div>
+        ))}
+      </div>
       <section>
-        <h2 className="section-title">Keterampilan</h2>
+        <h2 className="section-title">Skills</h2>
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>Keahlian SDM</h3>
+            <h3>Core HR Competencies</h3>
             <ul>
-              <li>Hubungan Industrial</li>
-              <li>Hubungan Karyawan</li>
-              <li>Hukum Ketenagakerjaan Indonesia</li>
-              <li>Manajemen Kinerja</li>
-              <li>Penanganan Keluhan</li>
-              <li>Negosiasi</li>
-              <li>Akuisisi Talenta</li>
-              <li>Kompensasi & Tunjangan</li>
+              <li>Industrial & Employee Relations</li>
+              <li>Indonesian Labor Law</li>
+              <li>Performance Management</li>
+              <li>Grievance Handling & Mediation</li>
+              <li>Negotiation</li>
+              <li>Talent Acquisition</li>
+              <li>Compensation & Benefits</li>
             </ul>
           </div>
           <div className="skill-category">
-            <h3>Keterampilan Teknis</h3>
+            <h3>Technical Skills</h3>
             <ul>
-              <li>Analisis Data SDM</li>
-              <li>HRIS</li>
-              <li>Python (Otomatisasi Laporan)</li>
-              <li>Microsoft Excel (Tingkat Lanjut: Pivot Table, VLOOKUP)</li>
-              <li>Microsoft PowerPoint</li>
-              <li>Microsoft Word</li>
+              <li>HR Data Analysis</li>
+              <li>HRIS Management</li>
+              <li>Python (for Automation)</li>
+              <li>Advanced Microsoft Excel</li>
+              <li>Microsoft PowerPoint & Word</li>
+              <li>HTML & CSS</li>
             </ul>
           </div>
           <div className="skill-category">
-            <h3>Keterampilan Interpersonal</h3>
+            <h3>Interpersonal Skills</h3>
             <ul>
-              <li>Manajemen Konflik</li>
-              <li>Pemecahan Masalah</li>
-              <li>Komunikasi Profesional</li>
-              <li>Manajemen Proyek</li>
-              <li>Kepemimpinan</li>
+              <li>Conflict Resolution</li>
+              <li>Problem-Solving</li>
+              <li>Professional Communication</li>
+              <li>Project Management</li>
+              <li>Leadership</li>
             </ul>
           </div>
         </div>
       </section>
-
       <section>
-        <h2 className="section-title">Pendidikan</h2>
+        <h2 className="section-title">Education</h2>
         <div className="education-card">
-          <h3>Sarjana Psikologi (S.Psi)</h3>
+          <h3>Bachelor of Psychology (S.Psi)</h3>
           <h4>Universitas Muhammadiyah Prof. Dr. Hamka, Jakarta</h4>
-          <p className="graduation-details">Lulus: 2011 | IPK: 3.46 / 4.00</p>
+          <p className="graduation-details">Graduated: 2011 | GPA: 3.46 / 4.00</p>
         </div>
       </section>
     </div>

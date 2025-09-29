@@ -24,9 +24,9 @@ const ProjectSpotlight: React.FC<ProjectSpotlightProps> = ({
     <div className={`spotlight-card ${imagePosition === 'left' ? 'image-left' : 'image-right'}`}>
       {imageUrl && (
         <div className="spotlight-image-container">
-          <img 
-            src={imageUrl} 
-            alt={imageAlt || title} 
+          <img
+            src={imageUrl}
+            alt={imageAlt || title}
             className="spotlight-image"
             loading="lazy"
             width={600}
@@ -38,15 +38,15 @@ const ProjectSpotlight: React.FC<ProjectSpotlightProps> = ({
       <div className="spotlight-content">
         <h2>{title}</h2>
         <div className="spotlight-section">
-          <h3>Masalah</h3>
+          <h3>Problem</h3>
           <p>{problem}</p>
         </div>
         <div className="spotlight-section">
-          <h3>Solusi</h3>
+          <h3>Solution</h3>
           <p>{solution}</p>
         </div>
         <div className="spotlight-section result">
-          <h3>Hasil</h3>
+          <h3>Results</h3>
           {outcome}
         </div>
       </div>

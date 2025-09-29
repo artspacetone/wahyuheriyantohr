@@ -2,79 +2,52 @@ import React from 'react';
 import ProjectSpotlight from '../components/ProjectSpotlight';
 import './Portfolio.css';
 
-type PortfolioItem = {
-  title: string;
-  problem: string;
-  solution: string;
-  outcome: React.ReactNode;
-  imageUrl: string;
-  imageAlt?: string;
-  imagePosition?: 'left' | 'right';
-};
-
-const portfolioData: PortfolioItem[] = [
+const portfolioData = [
   {
-    title: 'Otomatisasi Laporan SDM dengan Python',
-    problem: 'Proses pembuatan laporan SDM bulanan (turnover, absensi, demografi) sangat manual, memakan waktu 2 hari kerja penuh, dan rentan terhadap human error.',
-    solution: 'Saya secara mandiri mempelajari dasar-dasar Python dan mengembangkan sebuah skrip sederhana untuk menarik, membersihkan, dan memvisualisasikan data dari sistem HRIS kami.',
+    title: 'HR Report Automation with Python',
+    problem: 'The monthly HR reporting process (turnover, attendance, demographics) was manual, time-consuming (2 full workdays), and prone to human error.',
+    solution: 'I independently learned the fundamentals of Python and developed a script to automatically pull, clean, and visualize data from our HRIS.',
     outcome: (
       <ul>
-        <li><strong>Efisiensi Meningkat 90%:</strong> Waktu pengerjaan berkurang dari 16 jam (2 hari) menjadi kurang dari 3 jam.</li>
-        <li><strong>Akurasi Data 100%:</strong> Menghilangkan risiko kesalahan manual dalam penyusunan laporan.</li>
-        <li><strong>Wawasan Lebih Cepat:</strong> Manajemen mendapatkan data krusial lebih awal untuk pengambilan keputusan strategis.</li>
+        <li><strong>90% Increase in Efficiency:</strong> Reduced processing time from 16 hours to under 3 hours.</li>
+        <li><strong>100% Data Accuracy:</strong> Eliminated the risk of manual errors in report compilation.</li>
+        <li><strong>Faster Insights:</strong> Management received critical data earlier for strategic decision-making.</li>
       </ul>
     ),
     imageUrl: '/portfolio/automation-dashboard.jpg',
-    imageAlt: 'Dashboard otomatisasi laporan SDM dengan visualisasi data',
-    imagePosition: 'right'
+    imagePosition: 'right' as const
   },
   {
-    title: 'Redesain Program Onboarding untuk Meningkatkan Kepuasan',
-    problem: 'Survei internal menunjukkan bahwa karyawan baru merasa kurang terhubung dan tidak sepenuhnya memahami budaya perusahaan dalam 3 bulan pertama mereka.',
-    solution: 'Saya merancang ulang program onboarding dari proses administratif menjadi sebuah "perjalanan 90 hari". Ini mencakup sesi perkenalan yang lebih terstruktur, program buddy system, dan check-in rutin dengan manajer dan HR.',
+    title: 'Onboarding Program Redesign to Boost Satisfaction',
+    problem: 'Internal surveys revealed that new hires felt disconnected and did not fully understand the company culture within their first 3 months.',
+    solution: 'I redesigned the onboarding program from an administrative checklist into a "90-day journey," including structured introductions, a buddy system, and regular check-ins with managers and HR.',
     outcome: (
       <ul>
-        <li><strong>Kepuasan Karyawan Baru Naik 25%:</strong> Diukur melalui survei anonim setelah 90 hari.</li>
-        <li><strong>Waktu Produktivitas Lebih Cepat:</strong> Karyawan baru merasa lebih cepat beradaptasi dan berkontribusi pada tim mereka.</li>
+        <li><strong>25% Increase in New Hire Satisfaction:</strong> Measured via anonymous surveys after 90 days.</li>
+        <li><strong>Faster Time-to-Productivity:</strong> New employees felt better adapted and able to contribute to their teams more quickly.</li>
       </ul>
     ),
     imageUrl: '/portfolio/onboarding-process.jpg',
-    imageAlt: 'Infografis proses onboarding karyawan baru',
-    imagePosition: 'left'
-  },
-  {
-    title: 'Strategi Mediasi Proaktif untuk Mengurangi Keluhan',
-    problem: 'Tingginya jumlah keluhan formal (grievance) yang masuk, menciptakan lingkungan kerja yang reaktif dan memakan banyak waktu manajemen.',
-    solution: 'Saya mengimplementasikan "klinik HR" mingguan di mana karyawan bisa berkonsultasi secara informal dan proaktif. Selain itu, saya mengadakan sesi edukasi kebijakan secara berkala untuk menjembatani kesenjangan informasi.',
-    outcome: (
-      <ul>
-        <li><strong>Keluhan Formal Turun 15%:</strong> Sebagian besar masalah berhasil diselesaikan pada tahap informal.</li>
-        <li><strong>Kepercayaan Meningkat:</strong> Karyawan merasa lebih nyaman mendekati HR sebelum masalah menjadi besar.</li>
-      </ul>
-    ),
-    imageUrl: '/portfolio/mediation-workshop.jpg',
-    imageAlt: 'Sesi workshop mediasi dan penyelesaian konflik',
-    imagePosition: 'right'
+    imagePosition: 'left' as const
   },
 ];
 
 const Portfolio: React.FC = () => {
   return (
     <div className="portfolio-page">
-      <h1>Proyek Unggulan</h1>
+      <h1>Featured Projects</h1>
       <p className="portfolio-intro">
-        Berikut adalah beberapa contoh bagaimana saya menerapkan keahlian saya untuk menciptakan solusi yang berdampak.
+        Here are a few examples of how I apply my skills to create impactful, data-driven solutions in a real-world HR environment.
       </p>
       <div className="portfolio-container">
         {portfolioData.map((project, index) => (
-          <ProjectSpotlight 
-            key={index} 
+          <ProjectSpotlight
+            key={index}
             title={project.title}
             problem={project.problem}
             solution={project.solution}
             outcome={project.outcome}
             imageUrl={project.imageUrl}
-            imageAlt={project.imageAlt}
             imagePosition={project.imagePosition}
           />
         ))}
@@ -82,5 +55,4 @@ const Portfolio: React.FC = () => {
     </div>
   );
 };
-
 export default Portfolio;

@@ -3,26 +3,26 @@ import './Certificates.css';
 
 const certificates = [
   {
-    title: 'Ijazah Sarjana Psikologi',
+    title: 'Bachelor\'s Degree in Psychology',
     issuer: 'Universitas Muhammadiyah Prof. Dr. Hamka',
     year: '2011',
     imageUrl: '/certificates/ijazah-sarjana.jpg'
   },
   {
-    title: 'Transkrip Nilai Akademik - Halaman 1',
+    title: 'Academic Transcript - Page 1',
     issuer: 'Universitas Muhammadiyah Prof. Dr. Hamka',
     year: '2011',
     imageUrl: '/certificates/transkrip-nilai-1.jpg'
   },
   {
-    title: 'Transkrip Nilai Akademik - Halaman 2',
+    title: 'Academic Transcript - Page 2',
     issuer: 'Universitas Muhammadiyah Prof. Dr. Hamka',
     year: '2011',
     imageUrl: '/certificates/transkrip-nilai-2.jpg'
   },
   {
-    title: 'Sertifikat Kursus Python',
-    issuer: 'Platform Kursus Online',
+    title: 'Python for Data Science Certificate',
+    issuer: 'Online Learning Platform',
     year: '2023',
     imageUrl: '/certificates/sertifikat-python.jpg'
   },
@@ -44,19 +44,19 @@ const Certificates: React.FC = () => {
 
   return (
     <div className="certificates-page">
-      <h1>Sertifikat & Ijazah</h1>
-      <p className="page-intro">Berikut adalah kredensial akademik dan sertifikasi profesional yang saya peroleh.</p>
+      <h1>Certificates & Credentials</h1>
+      <p className="page-intro">Below are the academic and professional credentials I have earned.</p>
       <div className="certificates-grid">
         {certificates.map((cert, index) => (
-          <div 
-            className="certificate-card" 
+          <div
+            className="certificate-card"
             key={index}
             onClick={() => openModal(cert.imageUrl, cert.title)}
           >
             <div className="certificate-image-container">
-              <img 
-                src={cert.imageUrl} 
-                alt={`Sertifikat: ${cert.title}`} 
+              <img
+                src={cert.imageUrl}
+                alt={`Certificate: ${cert.title}`}
                 className="certificate-image"
                 loading="lazy"
                 width={300}
@@ -72,16 +72,16 @@ const Certificates: React.FC = () => {
         ))}
       </div>
 
-      {/* Modal untuk menampilkan gambar dalam ukuran penuh */}
+      {/* Modal for displaying full-size image */}
       {selectedImage && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>×</button>
             <h3 className="modal-title">{selectedTitle}</h3>
             <div className="modal-image-container">
-              <img 
-                src={selectedImage} 
-                alt={`Tampilan penuh: ${selectedTitle}`} 
+              <img
+                src={selectedImage}
+                alt={`Full view: ${selectedTitle}`}
                 className="modal-image"
                 loading="eager"
                 decoding="sync"

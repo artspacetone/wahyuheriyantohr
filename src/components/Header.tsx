@@ -34,88 +34,88 @@ const Header: React.FC = () => {
   }, [scrolled]);
 
   return (
-    <header 
-      className={`header ${scrolled ? 'scrolled' : ''}`} 
+    <header
+      className={`header ${scrolled ? 'scrolled' : ''}`}
       role="banner"
     >
       <div className="nav-container">
         <div className="logo" itemScope itemType="https://schema.org/Person">
           <span itemProp="name">MOCH. WAHYU HERIYANTO</span>
         </div>
-        
-        <button 
-          className="menu-button" 
+
+        <button
+          className="menu-button"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? 'Tutup menu' : 'Buka menu'}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-        
-        <nav aria-label="Navigasi Utama">
-          <ul 
-            role="menubar" 
+
+        <nav aria-label="Main Navigation">
+          <ul
+            role="menubar"
             className={isMenuOpen ? 'show' : ''}
             aria-orientation="vertical"
           >
             <li role="none">
-              <NavLink 
-                to="/" 
-                role="menuitem" 
+              <NavLink
+                to="/"
+                role="menuitem"
                 className={({ isActive }) => isActive ? 'active' : ''}
                 aria-current={location.pathname === '/' ? 'page' : undefined}
               >
-                Beranda
+                Home
               </NavLink>
             </li>
             <li role="none">
-              <NavLink 
-                to="/tentang" 
+              <NavLink
+                to="/about"
                 role="menuitem"
                 className={({ isActive }) => isActive ? 'active' : ''}
-                aria-current={location.pathname === '/tentang' ? 'page' : undefined}
+                aria-current={location.pathname === '/about' ? 'page' : undefined}
               >
-                Tentang Saya
+                About Me
               </NavLink>
             </li>
             <li role="none">
-              <NavLink 
-                to="/pengalaman" 
+              <NavLink
+                to="/experience"
                 role="menuitem"
                 className={({ isActive }) => isActive ? 'active' : ''}
-                aria-current={location.pathname === '/pengalaman' ? 'page' : undefined}
+                aria-current={location.pathname === '/experience' ? 'page' : undefined}
               >
-                Pengalaman
+                Experience
               </NavLink>
             </li>
             <li role="none">
-              <NavLink 
-                to="/portofolio" 
+              <NavLink
+                to="/portfolio"
                 role="menuitem"
                 className={({ isActive }) => isActive ? 'active' : ''}
-                aria-current={location.pathname === '/portofolio' ? 'page' : undefined}
+                aria-current={location.pathname === '/portfolio' ? 'page' : undefined}
               >
-                Portofolio
+                Portfolio
               </NavLink>
             </li>
             <li role="none">
-              <NavLink 
-                to="/sertifikat" 
+              <NavLink
+                to="/certificates"
                 role="menuitem"
                 className={({ isActive }) => isActive ? 'active' : ''}
-                aria-current={location.pathname === '/sertifikat' ? 'page' : undefined}
+                aria-current={location.pathname === '/certificates' ? 'page' : undefined}
               >
-                Sertifikat
+                Certificates
               </NavLink>
             </li>
             <li role="none">
-              <NavLink 
-                to="/kontak" 
+              <NavLink
+                to="/contact"
                 role="menuitem"
                 className={({ isActive }) => isActive ? 'active contact-link' : 'contact-link'}
-                aria-current={location.pathname === '/kontak' ? 'page' : undefined}
+                aria-current={location.pathname === '/contact' ? 'page' : undefined}
               >
-                Kontak
+                Contact
               </NavLink>
             </li>
           </ul>
