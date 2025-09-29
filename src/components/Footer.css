@@ -1,105 +1,65 @@
 /* Base Footer Styles */
 .footer {
-  padding: 2.5rem 1.5rem;
+  padding: 3rem 1.5rem;
   background-color: var(--background-white);
   color: var(--light-text);
-  text-align: center;
   border-top: 1px solid var(--border-color);
-  margin-top: 3rem;
   font-size: 0.9rem;
-  line-height: 1.6;
 }
-
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
-
 .footer-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
   text-align: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
 }
-
 .footer-about {
   max-width: 500px;
 }
-
 .footer-logo {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-green);
   margin-bottom: 1rem;
-  display: inline-block;
 }
-
 .footer-description {
-  color: var(--light-text);
-  margin-bottom: 1.5rem;
   line-height: 1.7;
 }
-
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
-
 .contact-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: var(--light-text);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .contact-link:hover {
   color: var(--primary-green);
 }
-
 .contact-icon {
-  font-size: 1.1rem;
   color: var(--primary-green);
 }
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 1rem;
-}
-
 .footer-links-column {
-  text-align: left;
+  text-align: center;
 }
-
 .footer-links-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--dark-text);
   margin-bottom: 1.25rem;
-  position: relative;
-  padding-bottom: 0.5rem;
 }
-
-.footer-links-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--primary-green);
-}
-
 .footer-links ul {
   list-style: none;
   padding: 0;
@@ -108,35 +68,14 @@
   flex-direction: column;
   gap: 0.7rem;
 }
-
 .footer-links a {
   color: var(--light-text);
   text-decoration: none;
-  transition: color 0.3s ease, padding-left 0.3s ease;
-  display: inline-block;
-  position: relative;
-  padding-left: 0;
+  transition: color 0.3s ease;
 }
-
-.footer-links a::before {
-  content: '→';
-  position: absolute;
-  left: -15px;
-  opacity: 0;
-  transition: all 0.3s ease;
-  color: var(--primary-green);
-}
-
 .footer-links a:hover {
   color: var(--primary-green);
-  padding-left: 15px;
 }
-
-.footer-links a:hover::before {
-  opacity: 1;
-  left: 0;
-}
-
 .footer-bottom {
   border-top: 1px solid var(--border-color);
   padding-top: 1.5rem;

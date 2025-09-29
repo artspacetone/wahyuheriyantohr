@@ -17,21 +17,20 @@
 }
 
 .logo {
-  font-size: 1.25rem; /* Sedikit lebih kecil untuk mobile */
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--dark-text);
-  text-decoration: none;
 }
 
 .menu-button {
-  display: block; /* Selalu tampil di mobile */
+  display: block;
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--dark-text);
   padding: 0.5rem;
-  z-index: 1001; /* Pastikan di atas nav */
+  z-index: 1001;
 }
 
 nav ul {
@@ -41,24 +40,19 @@ nav ul {
   padding: 1rem 0;
   margin: 0;
   list-style: none;
-
-  /* Logika menu tersembunyi */
   position: absolute;
-  top: 100%; /* Mulai tepat di bawah header */
+  top: 100%;
   left: 0;
   right: 0;
   background-color: var(--background-white);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-top: 1px solid var(--border-color);
-
-  /* Transisi slide-down */
-  transform: translateY(-100%);
+  transform: translateY(-120%); /* Start hidden further up */
   visibility: hidden;
   opacity: 0;
   transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
 }
 
-/* Tampilkan menu saat kelas 'show' ditambahkan */
 nav ul.show {
   transform: translateY(0);
   visibility: visible;
@@ -84,21 +78,17 @@ nav a.active {
 }
 
 /* --- Desktop Styles --- */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .header {
     padding: 1rem 2rem;
   }
-
   .logo {
     font-size: 1.5rem;
   }
-
   .menu-button {
-    display: none; /* Sembunyikan tombol hamburger di desktop */
+    display: none;
   }
-
   nav ul {
-    /* Reset gaya mobile */
     position: static;
     flex-direction: row;
     background-color: transparent;
@@ -110,18 +100,15 @@ nav a.active {
     visibility: visible;
     opacity: 1;
   }
-
   nav a {
     padding: 0.5rem 0;
     background-color: transparent;
     position: relative;
   }
-
   nav a.active {
     font-weight: 700;
     color: var(--primary-green);
   }
-
   nav a::after {
     content: '';
     position: absolute;
@@ -132,7 +119,6 @@ nav a.active {
     background-color: var(--primary-green);
     transition: width 0.3s ease;
   }
-
   nav a:hover::after,
   nav a.active::after {
     width: 100%;

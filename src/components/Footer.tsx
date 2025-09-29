@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -10,17 +10,17 @@ const Footer: React.FC = () => {
     <footer className="footer" role="contentinfo">
       <div className="footer-content">
         <div className="footer-top">
-          <div className="footer-about" itemScope itemType="https://schema.org/Person">
-            <div className="footer-logo" itemProp="name">MOCH. WAHYU HERIYANTO</div>
-            <p className="footer-description" itemProp="description">
-              An HR professional focused on human resource development and experienced in creating positive and productive work environments.
+          <div className="footer-about">
+            <div className="footer-logo">MOCH. WAHYU HERIYANTO</div>
+            <p className="footer-description">
+              An HR professional focused on human capital development and creating positive, productive work environments through data-driven strategies.
             </p>
             <div className="contact-info">
-              <a href="mailto:pandanca7@gmail.com" className="contact-link" itemProp="email">
+              <a href="mailto:pandanca7@gmail.com" className="contact-link">
                 <FaEnvelope className="contact-icon" /> pandanca7@gmail.com
               </a>
-              <a href="tel:+6289672003771" className="contact-link" itemProp="telephone">
-                <FaPhone className="contact-icon" /> +62 896 7200 3771
+              <a href="tel:+6289672003771" className="contact-link">
+                <FaPhone className="contact-icon" /> +62 896-7200-3771
               </a>
             </div>
           </div>
@@ -37,18 +37,6 @@ const Footer: React.FC = () => {
                 <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
-
-            <div className="footer-links-column">
-              <h3 className="footer-links-title">Quick Links</h3>
-              <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#privacy-policy">Privacy Policy</a></li>
-                <li><a href="#terms-conditions">Terms & Conditions</a></li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -56,37 +44,12 @@ const Footer: React.FC = () => {
           <div className="copyright">
             &copy; {currentYear} MOCH. WAHYU HERIYANTO. All rights reserved.
           </div>
-
           <div className="social-links">
-            <a
-              href="https://linkedin.com/in/wahyupanca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="LinkedIn"
-              itemProp="sameAs"
-            >
+            <a href="https://linkedin.com/in/mochwahyuheriyanto" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a
-              href="https://github.com/wahyupanca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="GitHub"
-              itemProp="sameAs"
-            >
+            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <FaGithub />
-            </a>
-            <a
-              href="https://twitter.com/wahyupanca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="Twitter"
-              itemProp="sameAs"
-            >
-              <FaTwitter />
             </a>
           </div>
         </div>

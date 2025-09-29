@@ -1,13 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+// Layout Components
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+// Page Components
 import Home from './pages/Home';
 import About from './pages/About';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
 import Experience from './pages/Experience';
+import Portfolio from './pages/Portfolio';
 import Certificates from './pages/Certificates';
+import Contact from './pages/Contact';
+
+// App-level Stylesheet
 import './App.css';
 
 const App: React.FC = () => {
@@ -17,11 +23,11 @@ const App: React.FC = () => {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tentang" element={<About />} />
-          <Route path="/pengalaman" element={<Experience />} />
-          <Route path="/portofolio" element={<Portfolio />} />
-          <Route path="/sertifikat" element={<Certificates />} />
-          <Route path="/kontak" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/certificates" element={<Certificates />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
