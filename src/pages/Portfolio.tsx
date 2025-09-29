@@ -25,10 +25,25 @@ const portfolioData = [
       <ul>
         <li><strong>25% Increase in New Hire Satisfaction:</strong> Measured via anonymous surveys after 90 days.</li>
         <li><strong>Faster Time-to-Productivity:</strong> New employees felt better adapted and able to contribute to their teams more quickly.</li>
+        <li><strong>Improved Retention:</strong> New hires were more likely to stay beyond the first year.</li>
       </ul>
     ),
     imageUrl: '/portfolio/onboarding-process.jpg',
     imagePosition: 'left' as const
+  },
+  {
+    title: 'Proactive Mediation Strategy to Reduce Grievances',
+    problem: 'A high volume of formal grievances created a reactive work environment and consumed significant management time.',
+    solution: 'I implemented a weekly "HR clinic" for informal, proactive consultations and conducted regular policy education sessions to bridge information gaps.',
+    outcome: (
+      <ul>
+        <li><strong>15% Reduction in Formal Grievances:</strong> Most issues were resolved at an informal stage.</li>
+        <li><strong>Increased Employee Trust:</strong> Staff felt more comfortable approaching HR before issues escalated.</li>
+        <li><strong>Better Work Environment:</strong> Overall workplace satisfaction improved significantly.</li>
+      </ul>
+    ),
+    imageUrl: '/portfolio/mediation-workshop.jpg',
+    imagePosition: 'right' as const
   },
 ];
 
@@ -55,4 +70,5 @@ const Portfolio: React.FC = () => {
     </div>
   );
 };
+
 export default Portfolio;
