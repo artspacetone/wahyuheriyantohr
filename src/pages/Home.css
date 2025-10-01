@@ -83,10 +83,10 @@
 /* Call to Action Buttons */
 .cta-buttons {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Memungkinkan tombol turun ke baris baru jika tidak cukup ruang */
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem; /* Beri sedikit lebih banyak ruang */
 }
 
 .cta-primary {
@@ -113,6 +113,31 @@
   border-color: var(--dark-green);
 }
 
+/* --- GAYA BARU UNTUK TOMBOL DOWNLOAD --- */
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+  width: 100%;
+  max-width: 280px;
+}
+
+.cta-secondary:hover {
+  background-color: var(--primary-green);
+  color: var(--background-white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
@@ -137,13 +162,6 @@
   box-shadow: 0 4px 15px rgba(18, 140, 126, 0.4);
 }
 
-.whatsapp-icon {
-  font-size: 1.2rem;
-  margin-right: 8px;
-  display: inline-flex;
-  align-items: center;
-}
-
 /* ==========================================================================
    Tablet and Desktop Styles
    ========================================================================== */
@@ -153,14 +171,15 @@
   .hero-section {
     padding: 4rem 2rem;
   }
-  
+
   .cta-buttons {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .cta-primary,
+  .cta-secondary,
   .whatsapp-btn {
     width: auto;
     min-width: 220px;
@@ -175,25 +194,25 @@
     text-align: left;
     gap: 3rem;
   }
-  
+
   .profile-text {
     flex: 1;
     text-align: left;
   }
-  
+
   .profile-image {
     width: 280px;
     height: 350px;
     border-radius: 20px; /* Square with rounded corners on desktop */
   }
-  
+
   .hero-content h1,
   .hero-content .intro-text {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   .cta-buttons {
     justify-content: flex-start;
   }

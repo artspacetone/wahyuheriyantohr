@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaDownload } from 'react-icons/fa';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -16,10 +16,22 @@ const Home: React.FC = () => {
               <p className="intro-text">
                 With 10+ years of experience in Industrial Relations, I transform complex HR processes into efficient, data-driven solutions by blending expert mediation with Python-powered automation.
               </p>
+
               <div className="cta-buttons">
                 <Link to="/experience" className="cta-primary">
                   View My Experience
                 </Link>
+
+                <a
+                  href="/CV-Moch-Wahyu-Heriyanto-EN.pdf"
+                  className="cta-secondary"
+                  download="CV - Moch Wahyu Heriyanto.pdf"
+                  aria-label="Download my resume in PDF format"
+                >
+                  <FaDownload style={{ marginRight: '8px' }} />
+                  Download Print-Friendly CV
+                </a>
+
                 <a
                   href="https://wa.me/6289672003771"
                   target="_blank"
@@ -31,6 +43,7 @@ const Home: React.FC = () => {
                   <span>Chat via WhatsApp</span>
                 </a>
               </div>
+
             </div>
             <img
               src="/profile.jpg"
