@@ -23,7 +23,7 @@ const Home: React.FC = () => {
                 </Link>
 
                 <a
-                  href="/CV-Moch-Wahyu-Heriyanto-EN.pdf"
+                  href="/CV-Moch-Wahyu-Heriyanto-EN.html"
                   className="cta-secondary"
                   download="CV - Moch Wahyu Heriyanto.pdf"
                   aria-label="Download my resume in PDF format"
