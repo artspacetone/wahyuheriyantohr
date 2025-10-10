@@ -23,7 +23,7 @@ const Home: React.FC = () => {
                 </Link>
 
                 <a
-                  href="/CV-Moch-Wahyu-Heriyanto-EN.pdf"
+                 href="/CV - Moch. Wahyu Heriyanto _ Data & Performance Analytics.pdf"
                   className="cta-secondary"
                   download="CV - Moch Wahyu Heriyanto.pdf"
                   aria-label="Download my resume in PDF format"
@@ -59,8 +59,4 @@ const Home: React.FC = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Home;
-=======
-export default Home;
->>>>>>> 9687512e845fa29e543445db877f28e05965f654
