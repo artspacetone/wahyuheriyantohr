@@ -71,4 +71,8 @@ const Portfolio: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Portfolio;
+=======
+export default Portfolio;
+>>>>>>> 9687512e845fa29e543445db877f28e05965f654

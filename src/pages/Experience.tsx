@@ -146,4 +146,8 @@ const Experience: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Experience;
+=======
+export default Experience;
+>>>>>>> 9687512e845fa29e543445db877f28e05965f654
