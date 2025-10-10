@@ -11,10 +11,10 @@ const Home: React.FC = () => {
           <div className="profile-container">
             <div className="profile-text">
               <h1 id="hero-heading">
-                HR Professional Driving Efficiency & Reducing Conflict Through Data Analytics
+                Data & Analytics Professional Driving Business Performance
               </h1>
               <p className="intro-text">
-                With 10+ years of experience in Industrial Relations, I transform complex HR processes into efficient, data-driven solutions by blending expert mediation with Python-powered automation.
+                With 10+ years of experience, I leverage a strong foundation in finance and accounting to translate complex data into actionable insights and automate processes using Python and JavaScript.
               </p>
 
               <div className="cta-buttons">
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
                 </Link>
 
                 <a
-                  href="/CV-Moch-Wahyu-Heriyanto-EN.html"
+                  href="/CV-Moch-Wahyu-Heriyanto-EN.pdf"
                   className="cta-secondary"
                   download="CV - Moch Wahyu Heriyanto.pdf"
                   aria-label="Download my resume in PDF format"
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             </div>
             <img
               src="/profile.jpg"
-              alt="MOCH. WAHYU HERIYANTO - HR Professional & Data Analyst"
+              alt="MOCH. WAHYU HERIYANTO - Data & Analytics Professional"
               className="profile-image"
               width="280"
               height="350"
