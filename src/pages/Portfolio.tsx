@@ -4,45 +4,45 @@ import './Portfolio.css';
 
 const portfolioData = [
   {
-    title: 'HR Report Automation with Python',
-    problem: 'The monthly HR reporting process (turnover, attendance, demographics) was manual, time-consuming (2 full workdays), and prone to human error.',
-    solution: 'I independently learned the fundamentals of Python and developed a script to automatically pull, clean, and visualize data from our HRIS.',
+    title: 'Departmental Budget Visualization Dashboard',
+    problem: 'Department heads lacked real-time visibility into their budget utilization, leading to slow, reactive spending decisions and difficulty in resource allocation.',
+    solution: 'I architected and developed a full-stack interactive web dashboard using JavaScript and Node.js to provide real-time visualization of budget usage against forecasted targets.',
     outcome: (
       <ul>
-        <li><strong>90% Increase in Efficiency:</strong> Reduced processing time from 16 hours to under 3 hours.</li>
-        <li><strong>100% Data Accuracy:</strong> Eliminated the risk of manual errors in report compilation.</li>
-        <li><strong>Faster Insights:</strong> Management received critical data earlier for strategic decision-making.</li>
+        <li><strong>Empowered Management:</strong> Enabled department heads with self-service analytics for faster, data-driven expenditure decisions.</li>
+        <li><strong>Improved Allocation:</strong> Provided clear insights into spending patterns, allowing for more effective resource allocation.</li>
+        <li><strong>Increased Transparency:</strong> Created a single source of truth for departmental budget status, accessible anytime.</li>
       </ul>
     ),
-    imageUrl: '/portfolio/automation-dashboard.jpg',
+    imageUrl: '/portfolio/automation-dashboard.jpg', // Placeholder image
     imagePosition: 'right' as const
   },
   {
-    title: 'Onboarding Program Redesign to Boost Satisfaction',
-    problem: 'Internal surveys revealed that new hires felt disconnected and did not fully understand the company culture within their first 3 months.',
-    solution: 'I redesigned the onboarding program from an administrative checklist into a "90-day journey," including structured introductions, a buddy system, and regular check-ins with managers and HR.',
+    title: 'Financial Report Automation Script',
+    problem: 'The monthly financial reporting process involved manually consolidating data from multiple complex Excel files, a time-consuming task prone to human error.',
+    solution: 'I engineered a robust Python script using the Pandas library to fully automate the ETL (Extract, Transform, Load) process for financial reporting.',
     outcome: (
       <ul>
-        <li><strong>25% Increase in New Hire Satisfaction:</strong> Measured via anonymous surveys after 90 days.</li>
-        <li><strong>Faster Time-to-Productivity:</strong> New employees felt better adapted and able to contribute to their teams more quickly.</li>
-        <li><strong>Improved Retention:</strong> New hires were more likely to stay beyond the first year.</li>
+        <li><strong>Drastic Time Reduction:</strong> Significantly cut down manual consolidation work for generating draft P&L statements.</li>
+        <li><strong>100% Data Accuracy:</strong> Completely eliminated the potential for human error in data aggregation and calculation.</li>
+        <li><strong>Enhanced Focus:</strong> Freed up the finance team to focus on analysis and strategic insights rather than manual data entry.</li>
       </ul>
     ),
-    imageUrl: '/portfolio/onboarding-process.jpg',
+    imageUrl: '/portfolio/onboarding-process.jpg', // Placeholder image
     imagePosition: 'left' as const
   },
   {
-    title: 'Proactive Mediation Strategy to Reduce Grievances',
-    problem: 'A high volume of formal grievances created a reactive work environment and consumed significant management time.',
-    solution: 'I implemented a weekly "HR clinic" for informal, proactive consultations and conducted regular policy education sessions to bridge information gaps.',
+    title: 'HR Analytics & Reporting Automation',
+    problem: 'Tracking key HR metrics like employee turnover and attendance was a manual, 2-day process, resulting in delayed insights and potential data inaccuracies.',
+    solution: 'I developed a comprehensive HR analytics solution using Python and connected it to a React-based frontend to track key metrics and automate data collection from the HRIS.',
     outcome: (
       <ul>
-        <li><strong>15% Reduction in Formal Grievances:</strong> Most issues were resolved at an informal stage.</li>
-        <li><strong>Increased Employee Trust:</strong> Staff felt more comfortable approaching HR before issues escalated.</li>
-        <li><strong>Better Work Environment:</strong> Overall workplace satisfaction improved significantly.</li>
+        <li><strong>90% Time Saved:</strong> Reduced manual reporting time from 2 days to under 3 hours.</li>
+        <li><strong>Improved Data Integrity:</strong> Achieved 100% data accuracy by automating the data collection and cleaning process.</li>
+        <li><strong>Faster Decision-Making:</strong> Provided management with timely, accurate data for strategic workforce planning.</li>
       </ul>
     ),
-    imageUrl: '/portfolio/mediation-workshop.jpg',
+    imageUrl: '/portfolio/mediation-workshop.jpg', // Placeholder image
     imagePosition: 'right' as const
   },
 ];
@@ -50,9 +50,9 @@ const portfolioData = [
 const Portfolio: React.FC = () => {
   return (
     <div className="portfolio-page">
-      <h1>Featured Projects</h1>
+      <h1>Relevant Technical Projects</h1>
       <p className="portfolio-intro">
-        Here are a few examples of how I apply my skills to create impactful, data-driven solutions in a real-world HR environment.
+        Here are a few examples of how I apply my technical skills to solve real-world business problems, automate processes, and provide data-driven insights.
       </p>
       <div className="portfolio-container">
         {portfolioData.map((project, index) => (
