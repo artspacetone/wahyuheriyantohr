@@ -23,10 +23,10 @@ const Home: React.FC = () => {
                 </Link>
 
                 <a
-                 href="/CV - Moch. Wahyu Heriyanto _ Data & Performance Analytics.pdf"
-                  className="cta-secondary"
-                  download="CV - Moch Wahyu Heriyanto.pdf"
-                  aria-label="Download my resume in PDF format"
+                 href="/CV-Moch-Wahyu-Heriyanto-EN.pdf" // Baris ini yang benar
+                 className="cta-secondary"
+                 download="CV - Moch Wahyu Heriyanto.pdf"
+                 aria-label="Download my resume in PDF format"
                 >
                   <FaDownload style={{ marginRight: '8px' }} />
                   Download Print-Friendly CV
