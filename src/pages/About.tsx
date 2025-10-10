@@ -12,26 +12,26 @@ const About: React.FC = () => {
             alt="MOCH. WAHYU HERIYANTO"
             className="about-profile-image"
           />
-          <h1>From Psychology to Python: My Journey in Humanizing the Workplace</h1>
+          <h1>From Accounting to Automation: My Journey in Data-Driven Finance</h1>
         </div>
         <div className="about-narrative">
           <p>
-            My career in Human Resources began with a deep fascination for psychology—understanding what motivates and drives people. For over a decade at TRANS TV, I applied this understanding not just to manage industrial relations, but to truly listen and resolve the issues faced by hundreds of employees.
+            My career began with a solid foundation in finance and accounting, where I spent over a decade ensuring financial accuracy and integrity at TRANS TV. I honed my skills in managing the full accounting cycle, from general ledger operations to month-end closing, always with a keen eye for detail and compliance.
           </p>
           <p>
-            I learned that even the best policies are ineffective without sincere dialogue. I mediated hundreds of disputes, not merely to resolve conflicts, but to build bridges of understanding between employees and management. The result? A reduction in formal grievances by over 15% and a more open work environment.
+            However, I noticed that many critical financial processes were manual, time-consuming, and prone to error. This observation sparked my curiosity and led me to a new passion: using technology to solve business problems. I took the initiative to learn programming, starting with Python, not just as a hobby, but as a tool to drive tangible improvements.
           </p>
           <p>
-            However, I realized empathy alone isn't enough. In the modern era, HR must be data-driven. This curiosity led me to learn Python, not to become a programmer, but to answer critical questions: 'Why do employees leave?', 'How can we improve efficiency without sacrificing quality?'. By automating reports that once took two days into a three-hour process, I proved that technology can free us from repetitive tasks to focus on what matters most: people.
+            My breakthrough came when I developed a Python script that automated monthly reconciliation reports. This single project reduced processing time by 40% and significantly decreased data entry errors. This success proved that technology could transform finance from a reactive reporting function into a proactive, strategic partner. I have since expanded my skills to include JavaScript and Node.js to build full-stack data visualization tools.
           </p>
         </div>
         <blockquote className="mission-statement">
-          "My mission is simple: to create a workplace where employees feel valued and the company can grow sustainably. I am ready to bring my unique blend of industrial relations expertise, data analysis skills, and a passion for innovation to your team."
+          "My mission is to leverage my unique blend of financial expertise and technical skill to build robust, data-driven solutions that increase efficiency, enhance accuracy, and provide actionable insights for strategic decision-making."
         </blockquote>
         <div className="about-cta">
           <p>See how I put this approach into practice:</p>
           <div className="cta-buttons">
-            <Link to="/portfolio" className="cta-link primary">View Featured Projects</Link>
+            <Link to="/portfolio" className="cta-link primary">View Technical Projects</Link>
             <Link to="/experience" className="cta-link secondary">View Work History</Link>
           </div>
         </div>
