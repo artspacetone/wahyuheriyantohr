@@ -7,42 +7,45 @@ type ExperienceItem = {
   location: string;
   period: string;
   points?: string[];
-  achievement?: string;
+  achievements?: string[];
 };
 
 const experiences: ExperienceItem[] = [
   {
-    role: 'HR Supervisor / Analyst',
-    company: 'TRANS TV',
+    role: 'Accounting Supervisor',
+    company: 'PT Televisi Transformasi Indonesia (Trans TV)',
     location: 'Jakarta, Indonesia',
-    period: 'July 2018 – Present',
+    period: 'June 2019 – Present',
     points: [
-      'Resolved an average of 5-7 industrial disputes per month through mediation, successfully <strong>reducing formal grievances by over 15%</strong> annually.',
-      'Educated over 500 employees on company policies, leading to a <strong>20% decrease in compliance-related inquiries</strong>.',
-      'Analyzed HR metrics to identify key turnover drivers, resulting in the implementation of engagement programs that <strong>lowered voluntary turnover by 10%</strong>.',
+      'Supervised an accounting team of 3 members, overseeing the full cycle of AR, AP, and General Ledger operations.',
+      'Led month-end and year-end closing processes, ensuring the timely and accurate delivery of financial reports to management.',
+      'Reviewed and approved operational fund requests, ensuring strict alignment with corporate budgets and financial governance policies.',
     ],
-    achievement: 'Developed a Python script to automate monthly HR reporting, <strong>increasing process efficiency by 90%</strong> (from 2 days to 3 hours).'
-  },
-  {
-    role: 'HR Supervisor',
-    company: 'TRANS TV',
-    location: 'Jakarta, Indonesia',
-    period: 'April 2014 – June 2018',
-    points: [
-      'Managed payroll and benefits administration for 300+ employees with a <strong>99.8% accuracy rate</strong>.',
-      'Renegotiated employee benefit packages with external vendors, achieving <strong>annual cost savings of 10%</strong> for the company.',
-      'Designed and implemented a new onboarding program, which <strong>improved new hire satisfaction scores by 25%</strong> within the first 90 days.',
+    achievements: [
+        'Developed a Python script to automate monthly reconciliation reports, <strong>reducing processing time by 40%</strong>.',
+        'Implemented a new data verification procedure that successfully <strong>decreased data entry errors by 15%</strong>.'
     ]
   },
   {
-    role: 'HR Staff',
-    company: 'PT. Rifa Putra Utama',
+    role: 'Accounting Staff',
+    company: 'PT Televisi Transformasi Indonesia (Trans TV)',
     location: 'Jakarta, Indonesia',
-    period: 'February 2012 – January 2014',
+    period: 'August 2015 – May 2019',
     points: [
-      'Processed foundational HR administration, including employee data, attendance, and leave requests.',
-    ],
-    achievement: 'Initiated and implemented a digital filing system for employee records, <strong>reducing document retrieval time by 30%</strong> and ensuring 100% reporting compliance.'
+      'Managed daily journal entries, performed bank reconciliations, and prepared foundational financial statements.',
+      'Administered the full cycle of vendor invoices and payments and monitored accounts receivable status.',
+      'Assisted in data preparation for annual budgeting and external auditing processes.',
+    ]
+  },
+  {
+    role: 'Store Manager',
+    company: 'J.CO Donuts & Coffee',
+    location: 'Cirebon, Indonesia',
+    period: 'March 2012 – April 2014',
+    points: [
+      'Held full P&L responsibility for the store, managing operational budgets and costs to achieve profit targets.',
+      'Performed daily sales analysis to identify trends and inform inventory and staffing decisions.',
+    ]
   }
 ];
 
@@ -56,16 +59,16 @@ const Experience: React.FC = () => {
           <span className="label">Total Experience</span>
         </div>
         <div className="stat">
+          <span className="value">40%↑</span>
+          <span className="label">Process Efficiency</span>
+        </div>
+        <div className="stat">
           <span className="value">15%↓</span>
-          <span className="label">Grievance Reduction</span>
+          <span className="label">Error Reduction</span>
         </div>
         <div className="stat">
-          <span className="value">90%↑</span>
-          <span className="label">Reporting Efficiency</span>
-        </div>
-        <div className="stat">
-          <span className="value">500+</span>
-          <span className="label">Employees Supported</span>
+          <span className="value">Python</span>
+          <span className="label">Automation Skill</span>
         </div>
       </section>
       <div className="timeline">
@@ -82,12 +85,12 @@ const Experience: React.FC = () => {
                   ))}
                 </ul>
               )}
-              {exp.achievement && (
-                <p className="achievement">
+              {exp.achievements && exp.achievements.map((achievement, i) => (
+                <p className="achievement" key={i}>
                   <strong>Key Achievement:</strong>
-                  <span dangerouslySetInnerHTML={{ __html: exp.achievement.replace('Key Achievement: ', '') }} />
+                  <span dangerouslySetInnerHTML={{ __html: achievement }} />
                 </p>
-              )}
+              ))}
             </div>
           </div>
         ))}
@@ -96,36 +99,37 @@ const Experience: React.FC = () => {
         <h2 className="section-title">Skills</h2>
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>Core HR Competencies</h3>
+            <h3>Data Analysis & Automation</h3>
             <ul>
-              <li>Industrial & Employee Relations</li>
-              <li>Indonesian Labor Law</li>
-              <li>Performance Management</li>
-              <li>Grievance Handling & Mediation</li>
-              <li>Negotiation</li>
-              <li>Talent Acquisition</li>
-              <li>Compensation & Benefits</li>
+                <li>Python (Pandas, NumPy)</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Node.js (Express.js)</li>
+                <li>SQL</li>
+                <li>Data Visualization</li>
+                <li>ETL Processes</li>
+                <li>Process Automation</li>
             </ul>
           </div>
           <div className="skill-category">
-            <h3>Technical Skills</h3>
+            <h3>Accounting & Finance</h3>
             <ul>
-              <li>HR Data Analysis</li>
-              <li>HRIS Management</li>
-              <li>Python (for Automation)</li>
-              <li>Advanced Microsoft Excel</li>
-              <li>Microsoft PowerPoint & Word</li>
-              <li>HTML & CSS</li>
+                <li>Financial Reporting</li>
+                <li>General Ledger (GL)</li>
+                <li>AP/AR Management</li>
+                <li>Budgeting & Forecasting</li>
+                <li>Internal Controls</li>
+                <li>Financial Governance</li>
             </ul>
           </div>
           <div className="skill-category">
-            <h3>Interpersonal Skills</h3>
+            <h3>Software & Interpersonal</h3>
             <ul>
-              <li>Conflict Resolution</li>
-              <li>Problem-Solving</li>
-              <li>Professional Communication</li>
-              <li>Project Management</li>
-              <li>Leadership</li>
+                <li>SAP, Oracle, Accurate</li>
+                <li>Advanced Microsoft Excel</li>
+                <li>Microsoft Office Suite</li>
+                <li>Team Leadership</li>
+                <li>Problem Solving</li>
+                <li>Inter-departmental Communication</li>
             </ul>
           </div>
         </div>
@@ -133,9 +137,9 @@ const Experience: React.FC = () => {
       <section>
         <h2 className="section-title">Education</h2>
         <div className="education-card">
-          <h3>Bachelor of Psychology (S.Psi)</h3>
-          <h4>Universitas Muhammadiyah Prof. Dr. Hamka, Jakarta</h4>
-          <p className="graduation-details">Graduated: 2011 | GPA: 3.46 / 4.00</p>
+          <h3>Bachelor of Economics (S.E.), Accounting</h3>
+          <h4>Universitas Muhamadiyah Prof. Dr. Hamka, Jakarta</h4>
+          <p className="graduation-details">Graduated: 2010 | GPA: 3.28 / 4.00</p>
         </div>
       </section>
     </div>
