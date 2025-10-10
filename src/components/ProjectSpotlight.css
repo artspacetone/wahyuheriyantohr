@@ -1,0 +1,176 @@
+/* Mobile-First Responsive Design */
+.spotlight-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 2rem; /* Smaller margin for mobile */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Smaller shadow for mobile */
+  overflow: hidden;
+}
+
+.spotlight-image-container {
+  background-color: var(--light-green);
+}
+
+/* Mobile-first: always stack vertically */
+.spotlight-card.image-right {
+  flex-direction: column;
+}
+
+.spotlight-card.image-left {
+  flex-direction: column;
+}
+
+.spotlight-image {
+  width: 100%;
+  height: 200px; /* Smaller height for mobile */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.spotlight-card:hover .spotlight-image {
+  transform: scale(1.02); /* Subtle hover effect for mobile */
+}
+
+.spotlight-content {
+  padding: 1.5rem 1rem; /* Mobile-first: smaller padding */
+}
+
+.spotlight-content h2 {
+  font-size: 1.4rem; /* Mobile-first: smaller font */
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.spotlight-section {
+  margin-bottom: 1.25rem; /* Smaller margin for mobile */
+}
+
+.spotlight-section h3 {
+  font-size: 1rem; /* Mobile-first: smaller font */
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Smaller letter spacing for mobile */
+}
+
+.spotlight-section p, .spotlight-section li {
+  font-size: 0.95rem; /* Mobile-first: slightly smaller font */
+  color: var(--light-text);
+  line-height: 1.6; /* Tighter line height for mobile */
+}
+
+.spotlight-section.result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spotlight-section.result li {
+  padding-left: 1.5rem; /* Smaller padding for mobile */
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-section.result li::before {
+  content: '✓';
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1rem; /* Smaller checkmark for mobile */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .spotlight-card {
+    margin-bottom: 3rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  }
+
+  .spotlight-image {
+    height: 220px;
+  }
+
+  .spotlight-content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .spotlight-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .spotlight-section h3 {
+    font-size: 1.05rem;
+  }
+
+  .spotlight-section p, .spotlight-section li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .spotlight-section.result li {
+    padding-left: 1.6rem;
+  }
+
+  .spotlight-section.result li::before {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .spotlight-card {
+    flex-direction: row;
+    margin-bottom: 4rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  }
+
+  .spotlight-card.image-left {
+    flex-direction: row-reverse;
+  }
+
+  .spotlight-image-container {
+    flex: 1;
+    min-width: 400px;
+  }
+
+  .spotlight-image {
+    height: 100%;
+  }
+
+  .spotlight-content {
+    flex: 1.2;
+    padding: 2.5rem 2rem;
+  }
+
+  .spotlight-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .spotlight-section h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .spotlight-section p, .spotlight-section li {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .spotlight-section.result li {
+    padding-left: 1.75rem;
+  }
+
+  .spotlight-section.result li::before {
+    font-size: 1.2rem;
+  }
+
+  .spotlight-card:hover .spotlight-image {
+    transform: scale(1.05);
+  }
+}

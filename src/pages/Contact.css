@@ -1,0 +1,104 @@
+/* Base styles (Mobile First) */
+.contact-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+}
+
+.contact-header .intro-text {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-options-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.contact-details h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.2rem;
+  color: var(--dark-text);
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--light-text);
+}
+
+/* --- Styling Khusus untuk Kartu WhatsApp --- */
+.whatsapp-card {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.whatsapp-card:hover {
+  background-color: #20c15a;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-card .contact-icon,
+.whatsapp-card .contact-details h3,
+.whatsapp-card .contact-details p {
+  color: white;
+}
+
+/* --- Desktop Styles --- */
+@media (min-width: 768px) {
+  .contact-options-grid {
+    /* Buat 2 kolom di samping WhatsApp, dan 1 kolom di bawahnya */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .whatsapp-card {
+    /* Kartu WhatsApp memakan 2 kolom penuh */
+    grid-column: 1 / -1;
+    padding: 2rem;
+  }
+
+  .whatsapp-card .contact-icon {
+    font-size: 2.5rem;
+  }
+
+  .whatsapp-card .contact-details h3 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,126 @@
+/* Base Header Styles (Mobile First) */
+.header {
+  padding: 1rem;
+  background-color: var(--background-white);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+.menu-button {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-text);
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-color);
+  transform: translateY(-120%); /* Start hidden further up */
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+}
+
+nav ul.show {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.active {
+  color: var(--primary-green);
+  background-color: var(--light-green);
+}
+
+/* --- Desktop Styles --- */
+@media (min-width: 992px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .menu-button {
+    display: none;
+  }
+  nav ul {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+    border-top: none;
+    padding: 0;
+    gap: 1.5rem;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+  nav a {
+    padding: 0.5rem 0;
+    background-color: transparent;
+    position: relative;
+  }
+  nav a.active {
+    font-weight: 700;
+    color: var(--primary-green);
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-green);
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after,
+  nav a.active::after {
+    width: 100%;
+  }
+}
